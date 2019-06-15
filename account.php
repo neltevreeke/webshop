@@ -71,7 +71,7 @@ function modify($method) {
             <input type="submit" name="submit" value="DEL"/>
                 <div class = "error">
                     <?php if ($_POST){
-                    $errors = modify($_POST);
+                    $errors = del_user($_POST);
                     if (count($errors) > 0)
                     {
                         foreach ($errors as $error){
