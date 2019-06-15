@@ -54,5 +54,33 @@ function modify($method) {
                 </div>
             </form>
         </div>
+        <div class="delete-form">
+            <?php
+                echo "In case you want to delete your account, ".$_SESSION["login"]."<br /><br/>";
+            ?>
+            <form action="del_user.php" method="post" name="del_user.php">
+            Username: <br />
+            <input type="text" name="login" value=""/> 
+            <br />
+            Password: <br />
+            <input type="password" name="passwd" value=""/>
+            <br />
+            Repeat password: <br />
+            <input type="password" name="passwd-2" value=""/>
+            <br />
+            <input type="submit" name="submit" value="DEL"/>
+                <div class = "error">
+                    <?php if ($_POST){
+                    $errors = modify($_POST);
+                    if (count($errors) > 0)
+                    {
+                        foreach ($errors as $error){
+                            echo "<div class=\"error\">$error</div>";
+                        }
+                    }
+                    }?>
+            </form>
+        </div>
+            
     </body>
 </html>

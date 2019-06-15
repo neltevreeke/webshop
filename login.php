@@ -16,6 +16,7 @@ function login($method) {
     } else if (mysqli_num_rows($result) == 1) {
         $_SESSION["login"] = $login;
         header("Refresh:0");
+        header("Location: account.php");
     }
     return ($errors);
 }
@@ -28,7 +29,6 @@ function login($method) {
     </head>
     <body>
         <?php include("./templates/navbar.php") ?>
-
         <div class="login-form">
             <form action="login.php" method="post" name="login.php">
                 Username: <br />
